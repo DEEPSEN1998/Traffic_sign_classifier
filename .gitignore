@@ -33,4 +33,4 @@ notebooks/kaggle_datasets/
 
 # Ignore all data/ (you can include a README if needed)
 data/
-git rm -r --cached env/ data/ artifacts/ __pycache__/
+
