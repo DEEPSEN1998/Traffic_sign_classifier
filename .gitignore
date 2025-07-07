@@ -1,20 +1,36 @@
-.env
+# Python cache and logs
 __pycache__/
-*.csv
-*.h5
-*.ipynb_checkpoints
-*.npy
-*.pdb
-*.pyc
-*.pyd
+*.py[cod]
 *.pyo
+*.pyd
+*.pdb
+*.npy
+*.h5
+
+# Notebook junk
+*.ipynb_checkpoints
+
+# Data files
+*.csv
 *.tar
 *.tar.gz
 *.zip
-artifacts/*.csv
-artifacts/*.npy
-artifacts/application_train.csv
-data/
+
+# Artifacts and logs
+artifacts/
 logs/
+
+# Environment
+env/
+.venv/
 myenv/
+
+# Notebooks with large data
 notebooks/kaggle_datasets/
+
+# Local environment files
+.env
+
+# Ignore all data/ (you can include a README if needed)
+data/
+git rm -r --cached env/ data/ artifacts/ __pycache__/
