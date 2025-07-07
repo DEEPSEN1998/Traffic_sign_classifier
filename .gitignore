@@ -18,6 +18,9 @@ __pycache__/
 
 # Artifacts and logs
 artifacts/
+!artifacts/model.pkl
+!artifacts/preprocessor.pkl
+!artifacts/top_features.json
 logs/
 
 # Environment
