@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Traffic Sign Classifier</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fa;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            background: #fff;
+            padding: 20px 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        input[type="file"] {
+            margin: 10px 0;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .result {
+            margin-top: 30px;
+            padding: 15px 25px;
+            background-color: #e6ffe6;
+            border: 1px solid #33cc33;
+            border-radius: 8px;
+            color: #2d6a2d;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>🚦 Traffic Sign Classifier</h1>
+    
+    <form action="/predict" method="post" enctype="multipart/form-data">
+        <label>Select an image:</label><br>
+        <input type="file" name="file" accept="image/*" required><br><br>
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction %}
+  <h3>Prediction: {{ prediction.label }}</h3>
+  <p>Confidence: {{ prediction.confidence }}</p>
+  <p>Class Index: {{ prediction.index }}</p>
+{% endif %}
+</body>
+</html>

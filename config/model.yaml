@@ -1,0 +1,36 @@
+# ========= Project Configurations =========
+
+project_name: traffic_sign_classifier
+artifact_dir: artifacts
+
+# ========= Data Paths =========
+data:
+  raw_dir: data/raw
+  train_dir: data/train
+  test_dir: data/test
+  labels: data/class_names.json  # Optional JSON file to store class index-name mapping
+
+# ========= Model Params =========
+model:
+  name: cnn_classifier
+  model_dir: artifacts/model
+  model_file: model.pkl
+  image_size: [64, 64]
+  num_classes: 43
+
+# ========= Training Params =========
+train:
+  batch_size: 32
+  num_epochs: 30
+  learning_rate: 0.001
+  optimizer: adam
+  loss_fn: cross_entropy
+
+# ========= Logging =========
+logging:
+  log_dir: logs
+
+# ========= FastAPI =========
+api:
+  host: 0.0.0.0
+  port: 8000
