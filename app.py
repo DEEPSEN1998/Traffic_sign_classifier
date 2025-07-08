@@ -16,7 +16,7 @@ templates = Jinja2Templates(directory="templates")
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # ---------------------- Load Model ---------------------- #
-model_path = "artifacts/model.pth"
+model_path = "./artifacts/model.pth"
 model = NeuralNetwork().to(device)
 model.load_state_dict(torch.load(model_path, map_location=device))
 model.eval()
